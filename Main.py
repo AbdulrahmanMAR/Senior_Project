@@ -21,7 +21,7 @@ if not capture.isOpened():
 #Holistic object for hand tracking/sign prediction with confidence percentages for detection and tracking
 with MP.solutions.holistic.Holistic(min_detection_confidence = 0.75, min_tracking_confidence = 0.75) as HLS:
     while capture.isOpened():   #loop while camera is opened
-        img = capture.read() #read frame and save to variable
+        _, img = capture.read() #read frame and save to variable
         #Process image for landmarks through the "Process_Image" function from Hand_Tracking_Functions
         p_results = Process_Image(img, HLS)
         #Draw landmarks on image for landmarks through the "Landmark_Drawing" function from Hand_Tracking_Functions
@@ -37,6 +37,6 @@ with MP.solutions.holistic.Holistic(min_detection_confidence = 0.75, min_trackin
         if cv2.getWindowProperty('Camera', cv2.WND_PROP_VISIBLE) < 1:
             break
 
-        #Release the camera capture and close all windows
-        capture.release()
-        cv2.destroyAllWindows()
+#Release the camera capture and close all windows
+capture.release()
+cv2.destroyAllWindows()
