@@ -1,3 +1,5 @@
+#Here are the main hand tracking functions, these functions will serve as important parts for the app to work
+
 import mediapipe as MP
 import cv2
 import numpy as NP
