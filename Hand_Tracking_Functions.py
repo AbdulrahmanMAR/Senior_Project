@@ -6,11 +6,9 @@ import numpy as NP
 
 #Function that processes an image through model (mediapipe holistic in this case) and outputs results as landmarks
 def Process_Image(image, model):
-    image.flags.writeable = False #Set image to read only mode
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) #Switch image from BGR to RGB
     #Process the image through model and save result
     Landmarks_Results = model.process(image)
-    image.flags.writeable = True #Reset the image to writable
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR) #Reset the image to BGR
     return Landmarks_Results
 
