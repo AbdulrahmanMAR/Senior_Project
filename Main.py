@@ -19,11 +19,11 @@ if not capture.isOpened():
 
 
 #Holistic object for hand tracking/sign prediction with confidence percentages for detection and tracking
-with MP.solutions.holistic.Holistic(min_detection_confidence = 0.75, min_tracking_confidence = 0.75) as HLS:
+with MP.solutions.hands.Hands(max_num_hands=2, model_complexity=1, min_detection_confidence = 0.7, min_tracking_confidence = 0.7) as HANDS:
     while capture.isOpened():   #loop while camera is opened
         _, img = capture.read() #read frame and save to variable
         #Process image for landmarks through the "Process_Image" function from Hand_Tracking_Functions
-        p_results = Process_Image(img, HLS)
+        p_results = Process_Image(img, HANDS)
         #Draw landmarks on image for landmarks through the "Landmark_Drawing" function from Hand_Tracking_Functions
         Landmark_Drawing(img, p_results)
         #Extract keypoints from landmarks through the "Extract_Keypoints" function from Hand_Tracking_Functions and add it to "keypoints" list
