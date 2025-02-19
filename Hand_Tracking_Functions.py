@@ -3,10 +3,9 @@
 import mediapipe as MP
 import cv2
 import numpy as NP
-import numpy as np
 
 hands = MP.solutions.hands.Hands
-#Function that processes an image through model (mediapipe holistic in this case) and outputs results as landmark data
+#Function that processes an image through model (mediapipe hands in this case) and outputs results as landmark data
 def Process_Image(image, model):
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) #Switch image from BGR to RGB
     #Process the image through model and save landmark data result
