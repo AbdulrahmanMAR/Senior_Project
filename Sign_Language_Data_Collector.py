@@ -21,15 +21,16 @@ HANDS = MP.solutions.hands.Hands(static_image_mode=True, max_num_hands=2, model_
 Data_Dir = "data"
 
 #Goes through each directory in the dataset
-for dir_ in os.listdir(dataset_dir):
+for dir_ in range(len(os.listdir(dataset_dir))): #Using an int so that the data is loaded in correct order
+    print(dir_)
     #Makes a directory for each letter to store numpy data files
     os.mkdir(os.path.join(Data_Dir, signs[sign_index]))
     #image number in letter dataset directory
     imnum = 0
     #Takes each image in the letter directory
-    for image_path in os.listdir(os.path.join(dataset_dir, dir_)):
+    for image_path in os.listdir(os.path.join(dataset_dir, str(dir_))):
         #reads the image
-        image = cv2.imread(os.path.join(dataset_dir, dir_, image_path))
+        image = cv2.imread(os.path.join(dataset_dir, str(dir_), image_path))
         #We have to resize images so that the model can actually learn on consistent data
         if sign_index == 18: #In the dataset we have one letter that uses a different aspect ratio (5:3 instead of 3:5) so that we can capture the letter
             #Note: I'll probably add another letter in 5:3 aspect ratio that doesn't have its data fully captured, we'll see after the training
@@ -39,9 +40,9 @@ for dir_ in os.listdir(dataset_dir):
         p_results = Process_Image(resized, HANDS) #Prcoess the image
         keypoints = Extract_Keypoints(p_results) #Extract keypoints
         if len(keypoints) != 0: #check if keypoints were even extracted so that we don't save empty numpy files
-            data_path = os.path.join(Data_Dir, signs[sign_index], str(imnum)) #Path to save the numpy data in
+            data_path = os.path.join(Data_Dir, signs[sign_index], image_path) #Path to save the numpy data in
             NP.save(data_path, keypoints) #Save numpy data files
-            imnum += 1
+            imnum += 1 #next image number
     print(signs[sign_index] + ": has " + str(imnum) + " data files.") #Print how many numpy files were saved for each letter
 
-    sign_index += 1
+    sign_index += 1 #next letter directory
