@@ -1,14 +1,12 @@
 Temp readme, will be fully rewritten later on but for now it's more of a check list and reminders.
 
-
 Main Funtionality Code Status:
 
--Main: Currently only tracks hands, will be redone after implementing model, hopefully completed by feb 25th
+-Main: full translation implemented
 
--Data Collection: Fully implemented v1, will probably be edited after training the model for the first time
+-Data Collection: Fully implemented v2, will probably be edited after training the model for the first time
 
--Model SR1: Just started coding, will hopefully be done by feb 22nd
-
+-Model SR1: fully done with sklearn's RandomForestClassifier
 
 
 
