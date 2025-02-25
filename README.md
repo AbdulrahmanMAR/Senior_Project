@@ -4,7 +4,7 @@ Main Funtionality Code Status:
 
 -Main: full translation implemented
 
--Data Collection: Fully implemented v2, will probably be edited after training the model for the first time
+-Data Collection: Fully implemented v2
 
 -Model SR1: fully done with sklearn's RandomForestClassifier
 
