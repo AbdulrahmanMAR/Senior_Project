@@ -2,7 +2,6 @@
 
 import mediapipe as MP
 import cv2
-import numpy as NP
 
 hands = MP.solutions.hands.Hands
 #Function that processes an image through model (mediapipe hands in this case) and outputs results as landmark data
