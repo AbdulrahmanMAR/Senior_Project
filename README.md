@@ -17,5 +17,3 @@ This project consists of three main parts:
 2-Text: Formatting the tranlated text and saving it
 
 3-Interfaces: Creating interfaces for both desktop and mobile
-
-A last part is porting it to Android but it probably won't be a big deal or time consuming.
