@@ -2,7 +2,7 @@ Temp readme, will be fully rewritten later on but for now it's more of a check l
 
 Main Funtionality Code Status:
 
--Main: full translation implemented
+-Main: full translation implemented, full interface implemented with text saver
 
 -Data Collection: Fully implemented v2
 
@@ -16,4 +16,4 @@ This project consists of three main parts:
 
 2-Text: Formatting the tranlated text and saving it
 
-3-Interfaces: Creating interfaces for both desktop and mobile
+3-Interfaces: Creating interfaces for both desktop
